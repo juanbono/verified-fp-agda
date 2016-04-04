@@ -1,6 +1,6 @@
-module eq where
+module ial.eq where
 
-open import level
+open import ial.level
 
 ----------------------------------------------------------------------
 -- datatypes

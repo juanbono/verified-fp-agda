@@ -1,6 +1,6 @@
-module bool where
+module ial.bool where
 
-open import level
+open import ial.level
 
 ----------------------------------------------------------------------
 -- datatypes

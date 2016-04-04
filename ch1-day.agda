@@ -1,4 +1,4 @@
-module day where
+module ch1-day where
 
 {-
   4. Define a datatype Day.

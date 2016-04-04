@@ -1,7 +1,7 @@
-module my-bool-thms where
-open import bool
-open import eq
-open import level
+module ch2-my-bool-thms where
+open import ial.bool
+open import ial.eq
+open import ial.level
 
 {-
   1. Pick a theorem from bool-thms.agda or bool-thms2.agda, and reprove it
