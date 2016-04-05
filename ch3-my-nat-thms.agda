@@ -1,10 +1,11 @@
-module ch3-my-nat-thms where 
+module ch3-my-nat-thms where
 
 open import ial.bool
 open import ial.bool-thms
 open import ial.bool-thms2
 open import ial.eq
 open import ial.nat
+open import ial.nat-thms
 open import ial.neq
 open import ial.product
 open import ial.product-thms
@@ -12,12 +13,31 @@ open import ial.sum
 
 
 -- 1. Pick some theorems in nat-thms and reprove them yourself.
--- TODO
+-- + is commutative
++comm′ : ∀ (x y : ℕ) → x + y ≡ y + x
++comm′ zero y rewrite +0 y = refl
++comm′ (suc x) y rewrite +suc y x | +comm′ x y = refl
+
++perm′ : ∀ (x y z : ℕ) → x + (y + z) ≡ y + (x + z)
++perm′ zero y z rewrite +comm′ y z  = refl
++perm′ (suc x) y z rewrite +perm′ x y z | +suc y (x + z) = refl
+
+
 {-
   2. In nat.agda, greather-than and greather-than-or-equal-to orderings are defined in terms of less-than and less-than-or-equal-to.
      Prove versions of theorems like <-trans and <+, but modified to use _>_ instead of _<_ .
 -}
--- TODO
+
+aux : ∀ (n : ℕ) → 0 < (suc n) ≡ tt
+aux zero = refl
+aux (suc x) = refl
+
+<-trans′ : ∀ {x y z : ℕ} → x > y ≡ tt → y > z ≡ tt → x > z ≡ tt
+<-trans′ {x} {0} {z} ()
+<-trans′ {0} {suc y} {0} ()
+<-trans′ {0} {suc y} {suc z} ()
+<-trans′ {suc x} {suc y} {0} p1 p2 = aux x
+<-trans′ {suc x} {suc y} {suc z} p1 p2 = {!TODO!}
 {-
    3. For each of the following functions, which one statement describes best what
       the function f does? There is exactyle one correct answer for each.
