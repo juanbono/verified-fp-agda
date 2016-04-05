@@ -1,12 +1,12 @@
-module tree-io-example where
+module ial.tree-io-example where
 
-open import io
-open import list
-open import maybe
-open import string
-open import tree
-open import unit
-open import nat-to-string
+open import ial.io
+open import ial.list
+open import ial.maybe
+open import ial.string
+open import ial.tree
+open import ial.unit
+open import ial.nat-to-string
 
 errmsg = "Run with a single (small) number as the command-line argument.\n"
 

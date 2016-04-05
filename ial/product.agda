@@ -1,6 +1,6 @@
-module product where
+module ial.product where
 
-open import level
+open import ial.level
 
 ----------------------------------------------------------------------
 -- types

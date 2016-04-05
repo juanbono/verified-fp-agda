@@ -1,8 +1,8 @@
-module bool-thms where
+module ial.bool-thms where
 
-open import bool
-open import eq
-open import sum
+open import ial.bool
+open import ial.eq
+open import ial.sum
 
 ~~-elim : ∀ (b : 𝔹) → ~ ~ b ≡ b
 ~~-elim tt = refl

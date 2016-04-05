@@ -1,8 +1,8 @@
-module bool-test where
+module ial.bool-test where
 
-open import bool
-open import eq
-open import level
+open import ial.bool
+open import ial.eq
+open import ial.level
 
 ~~tt : ~ ~ tt ≡ tt
 ~~tt = refl

@@ -1,10 +1,10 @@
-module product-thms where
+module ial.product-thms where
 
-open import eq
-open import level
-open import product
-open import unit
-open import functions
+open import ial.eq
+open import ial.level
+open import ial.product
+open import ial.unit
+open import ial.functions
 
 -- this is called the inspect idiom, in the Agda stdlib
 keep : ∀{ℓ}{A : Set ℓ} → (x : A) → Σ A (λ y → x ≡ y)

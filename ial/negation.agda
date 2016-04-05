@@ -1,7 +1,7 @@
-module negation where
+module ial.negation where
 
-open import level
-open import empty
+open import ial.level
+open import ial.empty
 
 ----------------------------------------------------------------------
 -- syntax

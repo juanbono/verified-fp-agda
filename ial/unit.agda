@@ -1,7 +1,7 @@
-module unit where
+module ial.unit where
 
-open import level
-open import eq
+open import ial.level
+open import ial.eq
 
 data ⊤ : Set where
   triv : ⊤

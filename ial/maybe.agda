@@ -1,8 +1,8 @@
-module maybe where
+module ial.maybe where
 
-open import level
-open import eq
-open import bool
+open import ial.level
+open import ial.eq
+open import ial.bool
 
 ----------------------------------------------------------------------
 -- datatypes

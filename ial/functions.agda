@@ -1,7 +1,7 @@
-module functions where
+module ial.functions where
 
-open import level
-open import eq
+open import ial.level
+open import ial.eq
 
 {- Note that the Agda standard library has an interesting generalization
    of the following basic composition operator, with more dependent typing. -}

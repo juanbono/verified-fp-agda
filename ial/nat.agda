@@ -1,7 +1,7 @@
-module nat where
+module ial.nat where
 
-open import product
-open import bool
+open import ial.product
+open import ial.bool
 
 ----------------------------------------------------------------------
 -- datatypes

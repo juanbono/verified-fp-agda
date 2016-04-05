@@ -1,7 +1,7 @@
-module neq where
+module ial.neq where
 
-open import eq
-open import negation
+open import ial.eq
+open import ial.negation
 
 ----------------------------------------------------------------------
 -- syntax

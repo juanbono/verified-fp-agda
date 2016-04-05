@@ -1,4 +1,4 @@
-module empty where
+module ial.empty where
 
 ----------------------------------------------------------------------
 -- datatypes

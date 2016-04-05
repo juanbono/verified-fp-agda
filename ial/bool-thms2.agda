@@ -1,9 +1,9 @@
-module bool-thms2 where
+module ial.bool-thms2 where
 
-open import bool
-open import eq
-open import product
-open import sum
+open import ial.bool
+open import ial.eq
+open import ial.product
+open import ial.sum
 
 ff-imp : ∀ (b : 𝔹) → ff imp b ≡ tt
 ff-imp ff = refl

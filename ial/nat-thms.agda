@@ -1,14 +1,14 @@
-module nat-thms where
+module ial.nat-thms where
 
-open import bool
-open import bool-thms
-open import bool-thms2
-open import eq
-open import nat
-open import neq
-open import product
-open import product-thms
-open import sum
+open import ial.bool
+open import ial.bool-thms
+open import ial.bool-thms2
+open import ial.eq
+open import ial.nat
+open import ial.neq
+open import ial.product
+open import ial.product-thms
+open import ial.sum
 
 --------------------------------------------------
 -- properties of addition
@@ -35,7 +35,7 @@ open import sum
 
 +comm : ∀ (x y : ℕ) → x + y ≡ y + x
 +comm zero y rewrite +0 y = refl
-+comm (suc x) y rewrite +suc y x | +comm x y = refl
++comm (suc x) y rewrite +comm x y | +suc y x = refl
 
 +perm : ∀ (x y z : ℕ) → x + (y + z) ≡ y + (x + z)
 +perm x y z rewrite +assoc x y z | +comm x y | sym (+assoc y x z) = refl
