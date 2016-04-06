@@ -24,20 +24,21 @@ open import ial.sum
 
 
 {-
-  2. In nat.agda, greather-than and greather-than-or-equal-to orderings are defined in terms of less-than and less-than-or-equal-to.
+2. In nat.agda, greather-than and greather-than-or-equal-to orderings are defined in terms of less-than and less-than-or-equal-to.
      Prove versions of theorems like <-trans and <+, but modified to use _>_ instead of _<_ .
 -}
 
-aux : ∀ (n : ℕ) → 0 < (suc n) ≡ tt
-aux zero = refl
-aux (suc x) = refl
+<-trans′ : ∀ (x y z : ℕ) → x > y ≡ tt → y > z ≡ tt → x > z ≡ tt
+<-trans′ 0 0 z ()
+<-trans′ (suc x) zero zero p1 p2 = refl
+<-trans′ (suc x) zero (suc z) p1 ()
+<-trans′ 0 (suc y) 0 ()
+<-trans′ 0 (suc y) (suc z) ()
+<-trans′ (suc x) (suc y) 0 p1 p2 = refl
+<-trans′ (suc x) (suc y) (suc z) p1 p2 = <-trans′ x y z p1 p2
 
-<-trans′ : ∀ {x y z : ℕ} → x > y ≡ tt → y > z ≡ tt → x > z ≡ tt
-<-trans′ {x} {0} {z} ()
-<-trans′ {0} {suc y} {0} ()
-<-trans′ {0} {suc y} {suc z} ()
-<-trans′ {suc x} {suc y} {0} p1 p2 = aux x
-<-trans′ {suc x} {suc y} {suc z} p1 p2 = {!TODO!}
+
+<+′ 
 {-
    3. For each of the following functions, which one statement describes best what
       the function f does? There is exactyle one correct answer for each.
