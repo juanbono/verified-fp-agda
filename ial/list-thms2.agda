@@ -1,15 +1,15 @@
-module list-thms2 where
+module ial.list-thms2 where
 
-open import bool
-open import bool-thms
-open import bool-thms2
-open import functions
-open import list
-open import list-thms
-open import nat
-open import nat-thms
-open import product-thms
-open import logic
+open import ial.bool
+open import ial.bool-thms
+open import ial.bool-thms2
+open import ial.functions
+open import ial.list
+open import ial.list-thms
+open import ial.nat
+open import ial.nat-thms
+open import ial.product-thms
+open import ial.logic
 
 list-and-++ : ∀(l1 l2 : 𝕃 𝔹) → list-and (l1 ++ l2) ≡ (list-and l1) && (list-and l2)
 list-and-++ [] l2 = refl

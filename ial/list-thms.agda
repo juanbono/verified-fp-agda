@@ -1,15 +1,15 @@
-module list-thms where
+module ial.list-thms where
 
 -- see list-thms2 for more 
 
-open import bool
-open import bool-thms
-open import functions
-open import list
-open import nat
-open import nat-thms
-open import product-thms
-open import logic
+open import ial.bool
+open import ial.bool-thms
+open import ial.functions
+open import ial.list
+open import ial.nat
+open import ial.nat-thms
+open import ial.product-thms
+open import ial.logic
 
 ++[] : ∀{ℓ}{A : Set ℓ} → (l : 𝕃 A) → l ++ [] ≡ l
 ++[] [] = refl

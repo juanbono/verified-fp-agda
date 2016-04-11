@@ -1,14 +1,14 @@
-module list where
+module ial.list where
 
-open import level
-open import bool
-open import eq
-open import maybe
-open import nat
-open import unit
-open import product
-open import empty
-open import sum
+open import ial.level
+open import ial.bool
+open import ial.eq
+open import ial.maybe
+open import ial.nat
+open import ial.unit
+open import ial.product
+open import ial.empty
+open import ial.sum
 
 ----------------------------------------------------------------------
 -- datatypes

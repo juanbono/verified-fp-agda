@@ -1,10 +1,10 @@
-module logic where
+module ial.logic where
 
-open import empty public
-open import eq public
-open import level public
-open import negation public
-open import neq public
-open import product public
-open import sum public
-open import unit public
+open import ial.empty public
+open import ial.eq public
+open import ial.level public
+open import ial.negation public
+open import ial.neq public
+open import ial.product public
+open import ial.sum public
+open import ial.unit public
