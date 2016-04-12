@@ -1,7 +1,7 @@
-module list-to-string where
+module ial.list-to-string where
 
-open import list
-open import string
+open import ial.list
+open import ial.string
 
 𝕃-to-string : ∀ {ℓ} {A : Set ℓ} → (f : A → string) → (separator : string) → 𝕃 A → string
 𝕃-to-string f sep [] = ""

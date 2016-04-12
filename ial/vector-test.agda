@@ -1,9 +1,9 @@
-module vector-test where
+module ial.vector-test where
 
-open import bool
-open import nat
-open import list
-open import vector
+open import ial.bool
+open import ial.nat
+open import ial.list
+open import ial.vector
 
 test-vector : 𝕍 𝔹 4
 test-vector = ff :: tt :: ff :: ff :: []

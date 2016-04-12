@@ -1,10 +1,10 @@
-module vector-sort where
+module ial.vector-sort where
 
-open import level
-open import bool
-open import nat
-open import product
-open import vector
+open import ial.level
+open import ial.bool
+open import ial.nat
+open import ial.product
+open import ial.vector
 
 insert𝕍 : ∀{ℓ}{A : Set ℓ}{n : ℕ} → (_<_ : A → A → 𝔹) → (_≅_ : A → A → 𝔹) → A → 𝕍 A n → Σi ℕ (λ m → 𝕍 A (suc m))
 insert𝕍 _<_ _≅_ x [] = , [ x ]𝕍

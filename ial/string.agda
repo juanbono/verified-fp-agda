@@ -1,11 +1,11 @@
-module string where
+module ial.string where
 
-open import bool
-open import eq
-open import char
-open import list
-open import nat
-open import unit
+open import ial.bool
+open import ial.eq
+open import ial.char
+open import ial.list
+open import ial.nat
+open import ial.unit
 
 ----------------------------------------------------------------------
 -- datatypes

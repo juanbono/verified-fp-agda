@@ -1,8 +1,8 @@
-module vector-test-ctors where
+module ial.vector-test-ctors where
 
-open import bool
-open import list
-open import vector
+open ial.import bool
+open ial.import list
+open ial.import vector
 
 ----------------------------------------------------------------------
 -- syntax

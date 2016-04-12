@@ -1,13 +1,13 @@
-module vector where
+module ial.vector where
 
-open import bool
-open import eq
-open import list
-open import list-to-string
-open import nat
-open import nat-thms
-open import product
-open import string
+open import ial.bool
+open import ial.eq
+open import ial.list
+open import ial.list-to-string
+open import ial.nat
+open import ial.nat-thms
+open import ial.product
+open import ial.string
 
 ----------------------------------------------------------------------
 -- datatypes
