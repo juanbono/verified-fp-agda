@@ -1,5 +1,5 @@
 module ch1-my-bool where
-open import ial.bool hiding (_imp_)
+open import bool hiding (_imp_)
 
 -- 3) Redefine some function from bool.agda.
 

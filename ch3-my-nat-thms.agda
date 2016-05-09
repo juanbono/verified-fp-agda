@@ -1,15 +1,15 @@
 module ch3-my-nat-thms where
 
-open import ial.bool
-open import ial.bool-thms
-open import ial.bool-thms2
-open import ial.eq
-open import ial.nat
-open import ial.nat-thms
-open import ial.neq
-open import ial.product
-open import ial.product-thms
-open import ial.sum
+open import bool
+open import bool-thms
+open import bool-thms2
+open import eq
+open import nat
+open import nat-thms
+open import neq
+open import product
+open import product-thms
+open import sum
 
 
 -- 1. Pick some theorems in nat-thms and reprove them yourself.
@@ -38,7 +38,7 @@ open import ial.sum
 <-trans′ (suc x) (suc y) (suc z) p1 p2 = <-trans′ x y z p1 p2
 
 
-<+′ 
+
 {-
    3. For each of the following functions, which one statement describes best what
       the function f does? There is exactyle one correct answer for each.

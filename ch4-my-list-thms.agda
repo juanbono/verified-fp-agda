@@ -1,13 +1,13 @@
 module ch4-my-list-thms where
 
-open import ial.list
-open import ial.eq
-open import ial.list-thms
-open import ial.list-thms2
-open import ial.bool
-open import ial.nat
-open import ial.product-thms
-open import ial.product
+open import list
+open import eq
+open import list-thms
+open import list-thms2
+open import bool
+open import nat
+open import product-thms
+open import product
 
 {-
   1. Which of the following formulas are theorems?
@@ -128,5 +128,5 @@ take-nthTail (suc n) (x :: xs) | l | ff , p2 with keep (is-empty l)
 take-nthTail (suc n) (x :: xs) | l | ff , p2 | tt , p3 with keep (take n xs)
 take-nthTail (suc n) (x :: xs) | l | ff , p2 | tt , p3 | [] , ()
 take-nthTail (suc n) (x :: xs) | l | ff , p2 | tt , p3 | ys , p4
-  rewrite p2 | p2 | p4 | is-empty-[] l p3 | ++[] ys = {!!} --aux ys xs 
+  rewrite p2 | p2 | p4 | is-empty-[] l p3 | ++[] ys = {!!} --aux ys xs
 take-nthTail (suc n) (x :: xs) | l | ff , p2 | ff , ()

@@ -1,5 +1,6 @@
 module ch1-suit where
-open import bool 
+open import bool
+
 data Suit : Set where
   hearts : Suit
   spades : Suit

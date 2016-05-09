@@ -1,4 +1,7 @@
 module ch5-internal-verification where
+open import vector
+open import nat
+
 
 {-
 1. Using the vector type 𝕍 in a nested fashion, fill in the hole below to define a type for matrices of natural numbers, where the type lists the
@@ -8,7 +11,8 @@ module ch5-internal-verification where
   n by m matrix = ?
 
 -}
--- TODO
+_by_matrix : ℕ → ℕ → Set
+n by m matrix = 𝕍 (𝕍 ℕ m) n
 
 {-
   2. Define the following basic operations on matrices, using the definition you propose in the previous problem. You should first figure out the
