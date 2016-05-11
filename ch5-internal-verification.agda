@@ -1,7 +1,8 @@
 module ch5-internal-verification where
 open import vector
 open import nat
-
+open import eq
+open import product
 
 {-
 1. Using the vector type 𝕍 in a nested fashion, fill in the hole below to define a type for matrices of natural numbers, where the type lists the
@@ -28,23 +29,49 @@ n by m matrix = 𝕍 (𝕍 ℕ m) n
 
   (d) transpose, which turns an n by m matrix into a m by n matrix by switching the rows and columns.
 
-  (e) _._, the dot product of two vectors.
+  (e) _∙_, the dot product of two vectors.
 
   (f) _*matrix_, which multiplies an n by k matrix and a k by m matrix to obtain a n by m matrix.
 -}
--- TODO
+-- (a)
+zero-matrix : (n : ℕ) → (m : ℕ) → n by m matrix
+zero-matrix n m = {!!}
+
+-- (b)
+matrix-elt : {n m : ℕ} (matrix : n by m matrix) → (row : ℕ) → (column : ℕ) → ℕ
+matrix-elt matrix r c = {!!}
+
+-- (c)
+diagonal-matrix : {n m : ℕ} (d : ℕ) → n by m matrix
+diagonal-matrix d = {!!}
+
+-- (d)
+tranpose : {n m : ℕ} (matrix : n by m matrix) → (m by n matrix)
+tranpose matrix = {!!}
+
+-- (e)
+_∙_ : {n m : ℕ} (v : 𝕍 ℕ n) → (w : 𝕍 ℕ m) → ℕ
+[] ∙ [] = 0
+[] ∙ (y :: ys) = 0
+(x :: xs) ∙ [] = 0
+(x :: xs) ∙ (y :: ys) = x * y + xs ∙ ys
+
+-- (d)
+_*matrix_ : {n m k : ℕ} (m1 : n by k matrix) → (m2 : k by m matrix) → n by m matrix
+m1 *matrix m2 = {!!}
 
 {-
-  3. vector.agda contains functions 𝕍-to-𝕃 and 𝕃-to-𝕍 for converting between vectors and lists. State and prove a theorem expressing the idea
+  3. vector.agda contains functions 𝕍-to-𝕃 and  𝕃-to-𝕍 for converting between vectors and lists. State and prove a theorem expressing the idea
      that converting a vector to a list and then back to a vector results in the same vector.
 -}
--- TODO
-
+𝕍-iso-𝕃 : ∀ {ℓ} {A : Set ℓ} {n : ℕ} (v : 𝕍 A n) → 𝕃-to-𝕍 (𝕍-to-𝕃 v) ≡ n , v
+𝕍-iso-𝕃 v = {!!}
 {-
   4. Write a function which takes a vector of type 𝕍 (A × B) n and returns a pair of vectors, one of type 𝕍 A n and another of type 𝕍 B n.
      This is similar to the unzip function in Haskell, only with vectors instead of lists.
 -}
--- TODO
+unzip : ∀ {ℓ} {A B : Set ℓ} {n : ℕ} → 𝕍 (A × B) n → (𝕍 A n × 𝕍 B n)
+unzip v = {!!}
 
 {-
   5. Implement remove-min and remove-max functions for the bst type. Using remove-min, you can then write a general remove function, that finds the
