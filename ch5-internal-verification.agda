@@ -12,6 +12,7 @@ open import product
   n by m matrix = ?
 
 -}
+
 _by_matrix : ℕ → ℕ → Set
 n by m matrix = 𝕍 (𝕍 ℕ m) n
 
@@ -35,41 +36,54 @@ n by m matrix = 𝕍 (𝕍 ℕ m) n
 -}
 -- (a)
 zero-matrix : (n : ℕ) → (m : ℕ) → n by m matrix
-zero-matrix n m = {!!}
+zero-matrix n m = repeat𝕍 (repeat𝕍 0 m) n
 
 -- (b)
 matrix-elt : {n m : ℕ} (matrix : n by m matrix) → (row : ℕ) → (column : ℕ) → ℕ
-matrix-elt matrix r c = {!!}
+matrix-elt matrix r c = nth𝕍 r {!!} (nth𝕍 c {!!} matrix)
 
 -- (c)
 diagonal-matrix : {n m : ℕ} (d : ℕ) → n by m matrix
 diagonal-matrix d = {!!}
 
 -- (d)
-tranpose : {n m : ℕ} (matrix : n by m matrix) → (m by n matrix)
-tranpose matrix = {!!}
+create_empties : {n : ℕ} → n by 0 matrix
+create_empties {n = Z} = repeat𝕍 [] Z
+
+transpose : {n m : ℕ} (matrix : n by m matrix) → (m by n matrix)
+transpose [] = create_empties
+transpose (x :: xs) = let xs_trans = transpose xs in
+                      zipWith𝕍 (_::_) x xs_trans
 
 -- (e)
 _∙_ : {n m : ℕ} (v : 𝕍 ℕ n) → (w : 𝕍 ℕ m) → ℕ
-[] ∙ [] = 0
-[] ∙ (y :: ys) = 0
-(x :: xs) ∙ [] = 0
+[] ∙ _ = 0
+_ ∙ [] = 0
 (x :: xs) ∙ (y :: ys) = x * y + xs ∙ ys
 
 -- (d)
+_𝕍xM_ : {n m : ℕ} (v : 𝕍 ℕ n) → (mat : m by n matrix) → 𝕍 ℕ m
+v 𝕍xM [] = []
+v 𝕍xM (x :: xs) = v ∙ x :: v 𝕍xM xs
+
 _*matrix_ : {n m k : ℕ} (m1 : n by k matrix) → (m2 : k by m matrix) → n by m matrix
-m1 *matrix m2 = {!!}
+[] *matrix m2 = []
+(x :: xs) *matrix m2 = let rightM = transpose m2 in
+                       x 𝕍xM rightM :: xs *matrix m2
 
 {-
   3. vector.agda contains functions 𝕍-to-𝕃 and  𝕃-to-𝕍 for converting between vectors and lists. State and prove a theorem expressing the idea
      that converting a vector to a list and then back to a vector results in the same vector.
 -}
+
 𝕍-iso-𝕃 : ∀ {ℓ} {A : Set ℓ} {n : ℕ} (v : 𝕍 A n) → 𝕃-to-𝕍 (𝕍-to-𝕃 v) ≡ n , v
 𝕍-iso-𝕃 v = {!!}
+
 {-
   4. Write a function which takes a vector of type 𝕍 (A × B) n and returns a pair of vectors, one of type 𝕍 A n and another of type 𝕍 B n.
      This is similar to the unzip function in Haskell, only with vectors instead of lists.
 -}
+
 unzip : ∀ {ℓ} {A B : Set ℓ} {n : ℕ} → 𝕍 (A × B) n → (𝕍 A n × 𝕍 B n)
 unzip v = {!!}
 
